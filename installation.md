@@ -1,10 +1,21 @@
-# Installation
+# Autonomous Driving
+
+- Once you have your model trained and save in e.g. `model.h5` file
+- run `python drive.py model.h5` to trigger `Flask` server and `socketio` connection
+    - You might need some additonal python libraries
+    - `pip install python-socketio`
+    - `pip install eventlet`
+    - `pip install Flask`
+- Open the simulator (see next part for details) and click Autonomous Mode
+- You should see the car driving itself
+
+# Simulator
 
 #### This project requires a `simulator` made with [`Unity`](https://unity3d.com/) provided by [`Udacity`](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)
 - Use this [download link](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58ae46bb_linux-sim/linux-sim.zip) for `Linux`
 - Use this [download link](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58ae4594_mac-sim.app/mac-sim.app.zip) for `macOS`
 - Use this [download link](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58ae4419_windows-sim/windows-sim.zip) for `Windows`
-
+ 
 NOTE * On Windows 8 there is an issue where drive.py is unable to establish a data connection with the simulator. If you are running Windows 8 It is advised to upgrade to Windows 10, which should be free, and then you should be able to run the project properly.
 
 Here are the newest **updates** to the simulator:

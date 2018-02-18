@@ -1,2 +1,10 @@
+# ignore data file
+__MACOSX/
 data.zip
+data/
+
+# ignore python source
+__pycache__/
+
+# macOS
 .DS_Store
