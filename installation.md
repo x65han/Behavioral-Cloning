@@ -4,7 +4,11 @@
 - run `python drive.py model.h5` to trigger `Flask` server and `socketio` connection
     - You might need some additonal python libraries
     - `pip install python-socketio`
+    - `pip install opencv-python`
+    - `pip install scikit-learn`
+    - `pip install tensorflow`
     - `pip install eventlet`
+    - `pip install moviepy`
     - `pip install Flask`
 - Open the simulator (see next part for details) and click Autonomous Mode
 - You should see the car driving itself
