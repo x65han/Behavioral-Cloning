@@ -5,6 +5,7 @@ data/
 
 # ignore python source
 __pycache__/
+.vscode/
 
 # macOS
 .DS_Store

@@ -63,11 +63,11 @@ def telemetry(sid, data):
         image = Image.open(BytesIO(base64.b64decode(imgString)))
         image_array = np.asarray(image)
         # image_array = pre_process(image_array, multiple=False)
-        steering_angle = float(model.predict(image_array[None, :, :, :], batch_size=1))
-
+        # magnify the steering angle to adjust to the speed
+        steering_angle = 1.15 * float(model.predict(image_array[None, :, :, :], batch_size=1))
         throttle = controller.update(float(speed))
 
-        print(steering_angle, throttle)
+        print(steering_angle)
         send_control(steering_angle, throttle)
 
         # save frame

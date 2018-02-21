@@ -52,13 +52,11 @@ def augment_data(X_data, y_data):
         # save normal image
         X_output.append(image)
         y_output.append(measurement)
-        # flip image horizontally
-        flipped_image = cv2.flip(image, 1) # shape (60, 320)
-        # resize to (60, 320, 1)
-        # flipped_image = np.resize(flipped_image, (flipped_image.shape[0], flipped_image.shape[1], 1))
-        # save flipped image
-        X_output.append(flipped_image)
-        y_output.append(measurement * -1)
+        # flip image horizontally if magnitude is > 0.33
+        if abs(measurement) > 0.2:
+            flipped_image = cv2.flip(image, 1)
+            X_output.append(flipped_image)
+            y_output.append(measurement * -1)
 
     return np.array(X_output), np.array(y_output)
 
@@ -95,12 +93,12 @@ def generator(samples, batch_size=1):
                     image = cv2.imread(image_path)
                     images.append(image)
                     measurement = float(line[3])
-                    if index == 1: # add correction to left image
-                        measurement = measurement + correction
-                    elif index == 2: # add correction to right image
-                        measurement = measurement - correction
-                    else:
-                        measurement *= 6
+                    # if index == 1: # add correction to left image
+                    #     measurement = measurement + correction
+                    # elif index == 2: # add correction to right image
+                    #     measurement = measurement - correction
+                    # else:
+                    measurement *= 6
                     measurements.append(measurement)
 
             # convert to numpy array
@@ -122,7 +120,7 @@ def load_data():
 
     # Load Images
     images = []
-    correction = 0.1
+    correction = 0.2
     measurements = []
     print("> Loading Images")
     for line in lines:
@@ -137,7 +135,7 @@ def load_data():
             elif index == 2: # add correction to right image
                 measurement = measurement - correction
             else:
-                measurement *= 3
+                measurement *= 1
             measurements.append(measurement)
 
     # convert to numpy array
