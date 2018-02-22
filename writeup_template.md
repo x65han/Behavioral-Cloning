@@ -15,17 +15,6 @@ The goals / steps of this project are the following:
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
-
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
@@ -90,6 +79,18 @@ With Keras + Adam Optimizer + Mean Squared Error loss function, tuning learning 
 
 - I used a combination of center lane driving, recovering from the left and right sides of the road with a correction of 0.2
 - I also applied a magnification of 1.15 on the `steering angle` in `drive.py` to magnify the steering angle with respect to full speed driving.
+
+<div align="center"><b>Sample Input Images with Steering Angle</b></div>
+<div align="center"><img src="https://github.com/x65han/Behavioral-Cloning/blob/master/miscellaneous/sample_input.png?raw=true" width="100%" /></div>
+
+I used the following technique to **pre-process** input data for **faster** and more **accurate** learning
+- Crop out car hood, sky, and trees (irrelevant to driving)
+- Normalize images
+- Apply steering correction of 0.2 on left and right cameras
+- Flip images with curvature > 0.33 to augment data set
+
+<div align="center"><b>Pre processed Input Images with Steering Angle</b></div>
+<div align="center"><img src="https://github.com/x65han/Behavioral-Cloning/blob/master/miscellaneous/pre_processed.png?raw=true" width="100%" /></div>
 
 ### Model Architecture and Training Strategy
 

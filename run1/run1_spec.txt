@@ -1,4 +1,4 @@
-drive.py: x1.5 angle
+drive.py: x1.2 angle
 
 augment if abs(measurement) > 0.33
-left right correct 0.2
+left + right camera correction 0.2

@@ -50,12 +50,12 @@ def augment_data(X_data, y_data):
     X_output, y_output = [], []
     for image, measurement in zip(X_data, y_data):
         # save normal image
-        X_output.append(image)
+        X_output.append(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
         y_output.append(measurement)
         # flip image horizontally if magnitude is > 0.33
-        if abs(measurement) > 0.2:
+        if abs(measurement) > 0.33:
             flipped_image = cv2.flip(image, 1)
-            X_output.append(flipped_image)
+            X_output.append(cv2.cvtColor(flipped_image, cv2.COLOR_BGR2RGB))
             y_output.append(measurement * -1)
 
     return np.array(X_output), np.array(y_output)
@@ -147,6 +147,6 @@ def load_data():
     print("> Augmenting Data")
     images, measurements = augment_data(images, measurements)
     # Visualize Data
-    # visualize_data(images, measurements, title="Images", gray_scale=True)
+    # visualize_data(images, measurements, title="Images")
 
     return images, measurements

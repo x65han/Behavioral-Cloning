@@ -17,3 +17,18 @@
 - This image provides the basic structure for `behaviorial cloning` neural network used in this project with some tweaks such as the last `fully-connected layer`
 - For more `installation` details, please refer to [installation.md](https://github.com/x65han/Behavioral-Cloning/blob/master/installation.md) file for more information
 <div align="center"><img src="https://github.com/x65han/Behavioral-Cloning/blob/master/miscellaneous/conv_net_model.png?raw=true" width="60%" /></div>
+
+<hr>
+<br>
+
+<div align="center"><b>Sample Input Images with Steering Angle</b></div>
+<div align="center"><img src="https://github.com/x65han/Behavioral-Cloning/blob/master/miscellaneous/sample_input.png?raw=true" width="100%" /></div>
+
+I used the following technique to **pre-process** input data for **faster** and more **accurate** learning
+- Crop out car hood, sky, and trees (irrelevant to driving)
+- Normalize images
+- Apply steering correction of 0.2 on left and right cameras
+- Flip images with curvature > 0.33 to augment data set
+
+<div align="center"><b>Pre processed Input Images with Steering Angle</b></div>
+<div align="center"><img src="https://github.com/x65han/Behavioral-Cloning/blob/master/miscellaneous/pre_processed.png?raw=true" width="100%" /></div>
