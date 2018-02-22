@@ -8,7 +8,7 @@
 
 ---
 
-<div align="center"><b>Autonomous Driving</b>&emsp;|&emsp;<a href="https://github.com/x65han/Behavioral-Cloning/blob/master/run1/output_video.mp4?raw=true">Full Video</a></div><br>
+<div align="center"><b>Autonomous Driving</b>&emsp;|&emsp;<a href="https://github.com/x65han/Behavioral-Cloning/blob/master/run1/output_video.mp4?raw=true">Full Video</a>&emsp;|&emsp;<a href="https://github.com/x65han/Behavioral-Cloning/blob/master/report.md">Full Report</a></div><br>
 <div align="center"><img width="60%" src="https://github.com/x65han/Behavioral-Cloning/blob/master/run1/output_video.gif?raw=true"/></div><br>
 
 ## Overview
