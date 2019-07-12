@@ -1,0 +1,11 @@
+Trained 1 Epoch  --------------------------
+Trained 1 Epoch  --------------------------
+Trained 3 Epochs --------------------------
+Epoch 1/3
+[Generator] Fetched a list of 11127 data.
+[Generator] normalize = True
+696/696 [==============================] - 527s 758ms/step - loss: 0.9071 - acc: 0.7560
+Epoch 2/3
+696/696 [==============================] - 531s 764ms/step - loss: 0.8047 - acc: 0.7774
+Epoch 3/3
+696/696 [==============================] - 532s 764ms/step - loss: 0.7497 - acc: 0.7900
